@@ -11,7 +11,10 @@ def test_factorial_10():
     expected = 3628800
     assert expected == actual
 
+def test_imprimir():
+    factorial.imprimir(factorial, 5)
+
 @pytest.mark.xfail(raises=TypeError)
 def test_wrong_type_factorial():
-    actual = factorial.factorial("4")
-    assert actual == 24
+    with pytest.raises(TypeError):
+        factorial.factorial("5")
